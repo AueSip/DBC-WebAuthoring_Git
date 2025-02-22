@@ -1,0 +1,28 @@
+<%- include(`../partials/header`) -%>
+
+   <%- include(`../partials/navigationbar`) -%>	
+
+    <% peoples.forEach(function(item) { %>
+       
+        <div style="background-color: black; margin-top: 60px;
+        padding: 20px; width: 10%; min-height: 150px;
+        display: inline-block;">
+            <h3><%= item.id %></h3>
+            <p>Star: <%= item.name %></p>
+            <p><%= item.surname %></p>
+            <p><%= item.age %></p>
+        </div>
+        <% }); %>
+
+        <div class="reviewAddition">
+            <form action="/reviews/add" method="post">
+                <input placeholder="name" name="name">
+                <input placeholder="surname" name="surname">
+                <input type ="number" placeholder="age" name="age" type="number">
+                <input type="submit" value="press">
+            </form>
+        </div>
+    
+   
+
+<%- include(`../partials/footer`) -%>

@@ -1,0 +1,32 @@
+<%- include(`../partials/header`) -%>
+
+   <%- include(`../partials/navigationbar`) -%>	
+
+
+   <div class="mainContent">
+      <div class="leftInformation">
+         <div>
+            <h1>Portfolio Site</h1>
+            <img src="/homeicn.png">
+         </div>
+         <div>
+            <h2>About This Review</h2>
+         </div>
+      </div>   
+
+      <div class="rightInformation">
+         <div>
+            <h2>Greater Details</h2>
+         </div>
+         <% peoples.forEach(function(item){ %>
+            <div class ="reviewBox" style="color: white;">
+               <%= item.name %><br>
+               <%= item.surname %><br>
+               <%= item.age %><br>
+            </div>
+         <% }); %>
+      </div>
+   </div>
+
+    
+<%- include(`../partials/footer`) -%>

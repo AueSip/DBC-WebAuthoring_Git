@@ -1,0 +1,33 @@
+<%- include(`../partials/header`) -%>
+
+   <%- include(`../partials/navigationbar`) -%>	
+
+
+   <div class="mainContent">
+      <div class="leftInformation">
+         <div>
+            <h1>Portfolio Site</h1>
+         </div>
+         <div>
+            <h2>About</h2>
+         </div>
+      </div>   
+
+      <div class="rightInformation">
+         <div>
+            <h2>Works</h2>
+         </div>
+         <div>
+            <% peoples.forEach(function(item){ %>
+               <div class ="reviewBox" style="color: white;">
+                  <a href='/reviews/retrieve/person/user/<%= item.id %>'>Find Out More!</a><br>
+                  <%= item.name %><br>
+                  <%= item.age %><br>
+               </div>
+            <% }); %>
+         </div>
+      </div>
+   </div>
+
+    
+<%- include(`../partials/footer`) -%>
