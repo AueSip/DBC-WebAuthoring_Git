@@ -1,0 +1,82 @@
+<%- include(`../partials/header`) -%>
+
+   <%- include(`../partials/navigationbar`) -%>	
+
+
+   <div class="mainContent">
+      <div class="leftInformation">
+         <div>
+            <h1>Portfolio Site</h1>
+         </div>
+         <div>
+            <h2>About</h2>
+         </div>
+      </div>   
+
+      <div class="rightInformation">
+         <div>
+            <h1>Games</h1>
+         </div>
+         <% var skills = "";
+            var keynotes = "";
+         listResults.forEach(function (item) { 
+            if (item.category != null){ %>
+            <div>
+               <h2>
+                  <%= item.title %>
+               </h2>
+               <h3>
+                  <%= item.Location %>, <%= item.category %>, <%= item.PortfolioType %>
+               </h3>
+               <p>
+               <%= item.maindescription %><br>
+               <%= item.shortdescription %><br>
+               </p>
+               <p>
+                  These Would Be Images<br>
+                  <%= item.ImageNormal %> <br>
+                  <%= item.ImageSquare %> <br>
+
+                  <% if (item.firstskill != null){
+                  skills = skills + item.firstskill + ", "
+                  }
+                  if (item.secondskill != null){
+                     skills = skills +  item.secondskill + ", "
+                  }
+                  if (item.thirdskill != null){
+                     skills = skills +  item.thirdskill + ", "
+                  }
+                  if (item.fourthskill != null){
+                     skills = skills +  item.fourthskill + ", "
+                  }
+                  %>
+
+                  Skills Aquired: <%=skills.substring(0, skills.length - 2)%><br>
+
+                  <% if (item.firstkeynote != null){
+                     keynotes = keynotes + item.firstkeynote + ", "
+                     }
+                     if (item.secondkeynote != null){
+                        keynotes = keynotes + item.secondkeynote + ", "
+                     }
+                     if (item.thirdkeynote != null){
+                        keynotes = keynotes + item.thirdkeynote + ", "
+                     }
+                     if (item.fourthkeynote != null){
+                        keynotes = keynotes + item.fourthkeynote + ", "
+                     }
+                     %>
+
+                  KeyNotes: <%= keynotes.substring(0, keynotes.length - 2) %>
+               
+               </p>
+            </div>
+         
+            <% }}) %>
+      </div>
+
+
+   </div>
+
+    
+<%- include(`../partials/footer`) -%>
