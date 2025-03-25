@@ -1,0 +1,95 @@
+<%- include(`../partials/header`) -%>
+
+   <%- include(`../partials/navigationbar`) -%>	
+
+    <div class = "mainContent">
+        
+        <div class = "gamePortfolioContent">
+            <%- include(`../partials/imagebox`) -%>	
+            <h1>Game Portfolios</h1>
+            <div class = "portfolioItemBox">
+                
+        <%listResults.forEach(function (item) { 
+            if (item.category == "Game"){ %>
+                  <div class = "portfolioSubItemBox">
+                    
+                        <img class = "NormalImage" src = './<%=item.ImageNormal%>.png' alt = '<%=item.ImageNormal%>'>
+                  
+                        <h2>
+                            <%= item.title %>
+                        </h2>
+                        <p>
+                        <%= item.shortdescription %> 
+                        </p>
+                    
+                  </div>
+                  
+              
+            <% }}) %>
+        </div>
+
+        </div>
+        
+
+        <div class = "appPortfolioContent">
+            <div class = "imageBoxFull">
+                <img class = "mainImageFullPage" src = "javaImage.png">
+            </div>
+            <h1>App Portfolios</h1>
+            <div class = "portfolioItemBox">
+        <%listResults.forEach(function (item) { 
+            if (item.category == "App"){ %>
+                  <div class = "portfolioSubItemBox">
+                    
+                        <img class = "NormalImage" src = './<%=item.ImageNormal%>.png' alt = '<%=item.ImageNormal%>'>
+                  
+                        <h2>
+                            <%= item.title %>
+                        </h2>
+                        <p>
+                        <%= item.shortdescription %> 
+                        </p>
+                    
+                  </div>
+                  
+              
+            <% }}) %>
+        </div>
+
+        </div>
+
+        
+        <div class = "webPortfolioContent">
+            <div class = "imageBoxFull">
+                <img class = "mainImageFullPage" src = "httpsicn.png">
+            </div>
+            <h1>Web Portfolios</h1>
+            <div class = "portfolioItemBox">
+        <%listResults.forEach(function (item) { 
+            if (item.category == "Web"){ %>
+                  <div class = "portfolioSubItemBox">
+                    
+                        <img class = "NormalImage" src = './<%=item.ImageNormal%>.png' alt = '<%=item.ImageNormal%>'>
+                  
+                        <h2>
+                            <%= item.title %>
+                        </h2>
+                        <p>
+                        <%= item.shortdescription %> 
+                        </p>
+                    
+                  </div>
+                  
+              
+            <% }}) %>
+        </div>
+
+        </div>
+
+       
+
+    </div>
+
+
+
+<%- include(`../partials/footer`) -%>

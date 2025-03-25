@@ -1,0 +1,163 @@
+<%- include(`../partials/header`) -%>
+
+   <%- include(`../partials/navigationbar`) -%>	
+
+
+  <div class = "mainContent">
+   
+   <%- include(`../partials/imagebox`) -%>	
+
+
+   <div class = "previousWorksItemBox">
+      <h1>College Projects</h1>
+
+      <%listResults.forEach(function (item) { 
+         if (item.PortfolioType == "College"){ %>
+               
+                     <h2><%=item.Location%>: <%=item.title%></h2>
+                     
+                     <div class = "previousWorksSubItemBox">
+                        
+                        <div class = "previousWorksInfoBox">
+                           <h3>Synopsis</h3>
+                           <p><%= item.shortdescription %></p>
+                        </div>
+
+                        <div class = "previousWorksInfoBox">
+                           <h3>Skills Aquired</h3>
+
+                           <% var skills = " ";
+                           if (item.firstskill != null){
+                              skills += item.firstskill + ", ";
+                           }
+                           if (item.secondskill != null){
+                              skills += item.secondskill + ", ";
+                           }
+                           if (item.thirdskill != null){
+                              skills += item.thirdskill + ", ";
+                           }
+                           if (item.fourthskill != null){
+                              skills += item.fourthskill + ", ";
+                           }%>
+
+                           <p><%= skills.substr(0, skills.length - 2) %></p>
+                        </div>
+
+                        <div class = "previousWorksInfoBox">
+                           <h3>Key Notes</h3>
+                           <% var keynotes = " ";
+                           if (item.firstkeynote != null){
+                              keynotes += item.firstkeynote + ", ";
+                           }
+                           if (item.secondkeynote != null){
+                              keynotes += item.secondkeynote + ", ";
+                           }
+                           if (item.thirdkeynote != null){
+                              keynotes += item.thirdkeynote + ", ";
+                           }
+                           if (item.fourthkeynote != null){
+                              keynotes += item.fourthkeynote + ", ";
+                           }%>
+
+                           <p><%= keynotes.substr(0, keynotes.length - 2) %></p>
+                        </div>
+
+                        <div class = "previousWorksInfoBox">
+                         <img class = "NormalImage" src = './<%=item.ImageNormal%>.png' alt = '<%=item.ImageNormal%>'>
+                        </div>
+               
+               </div>
+               
+         
+         <% }}) %>
+         </div>
+   </div>
+
+
+   <div class = "previousWorksItemBox">
+      <h1>Work Projects</h1>
+
+      <%listResults.forEach(function (item) { 
+         if (item.PortfolioType == "Work"){ %>
+               
+                     <h2><%=item.Location%>: <%=item.title%></h2>
+                     
+                     <div class = "previousWorksSubItemBox">
+                        
+                        <div class = "previousWorksInfoBox">
+                           <h3>Synopsis</h3>
+                           <p><%= item.shortdescription %></p>
+                        </div>
+
+                        <div class = "previousWorksInfoBox">
+                           <h3>Skills Aquired</h3>
+
+                           <% var skills = " ";
+                           if (item.firstskill != null){
+                              skills += item.firstskill + ", ";
+                           }
+                           if (item.secondskill != null){
+                              skills += item.secondskill + ", ";
+                           }
+                           if (item.thirdskill != null){
+                              skills += item.thirdskill + ", ";
+                           }
+                           if (item.fourthskill != null){
+                              skills += item.fourthskill + ", ";
+                           }%>
+
+                           <p><%= skills.substr(0, skills.length - 2) %></p>
+                        </div>
+
+                        <div class = "previousWorksInfoBox">
+                           <h3>Key Notes</h3>
+                           <% var keynotes = " ";
+                           if (item.firstkeynote != null){
+                              keynotes += item.firstkeynote + ", ";
+                           }
+                           if (item.secondkeynote != null){
+                              keynotes += item.secondkeynote + ", ";
+                           }
+                           if (item.thirdkeynote != null){
+                              keynotes += item.thirdkeynote + ", ";
+                           }
+                           if (item.fourthkeynote != null){
+                              keynotes += item.fourthkeynote + ", ";
+                           }%>
+
+                           <p><%= keynotes.substr(0, keynotes.length - 2) %></p>
+                        </div>
+
+                        <div class = "previousWorksInfoBox">
+                         <img class = "NormalImage" src = './<%=item.ImageNormal%>.png' alt = '<%=item.ImageNormal%>'>
+                        </div>
+               
+               </div>
+               
+         
+         <% }}) %>
+         </div>
+   </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include(`../partials/footer`) -%>

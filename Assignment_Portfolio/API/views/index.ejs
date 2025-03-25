@@ -5,78 +5,49 @@
 
    <div class="mainContent">
       <div class="leftInformation">
-         <div>
-            <h1>Portfolio Site</h1>
-         </div>
-         <div>
-            <h2>About</h2>
+         <img src="/usericn.png" alt="User Icon" class="usericnImage">
+
+         <div class = "userContent">
+            <h2><u>Scott Fowler</u></h2>
+            <%- include(`../partials/userinformation`) -%>	
+
+
+            <div class="imageContainer">
+              <a href="https://github.com/AueSip"> <img src="/GitHubImage512xicn.png" alt="github Icon" class="LinkImage"></img></a>
+              <a href="https://ie.linkedin.com/in/scott-fowler-4ba0722b9"> <img src="/Linkedin512xicn.png" alt="linkedin Icon" class="LinkImage"></img></a>
+               <a href="https://linktr.ee/auesipdev"> <img src="/Linktree512xicn.png" alt="linktree Icon" class="LinkImage"></img></a>
+            </div>
          </div>
       </div>   
 
       <div class="rightInformation">
-         <div>
-            <h1>Games</h1>
+         <div class = "videoFootage">
+           <img class = "mainImage" src = "dwarveinImage.png">
          </div>
-         <% var skills = "";
-            var keynotes = "";
-         listResults.forEach(function (item) { 
-            if (item.category != null){ %>
-            <div>
-               <h2>
-                  <%= item.title %>
-               </h2>
-               <h3>
-                  <%= item.Location %>, <%= item.category %>, <%= item.PortfolioType %>
-               </h3>
-               <p>
-               <%= item.maindescription %><br>
-               <%= item.shortdescription %><br>
-               </p>
-               <p>
-                  These Would Be Images<br>
-                  <%= item.ImageNormal %> <br>
-                  <%= item.ImageSquare %> <br>
-
-                  <% if (item.firstskill != null){
-                  skills = skills + item.firstskill + ", "
-                  }
-                  if (item.secondskill != null){
-                     skills = skills +  item.secondskill + ", "
-                  }
-                  if (item.thirdskill != null){
-                     skills = skills +  item.thirdskill + ", "
-                  }
-                  if (item.fourthskill != null){
-                     skills = skills +  item.fourthskill + ", "
-                  }
-                  %>
-
-                  Skills Aquired: <%=skills.substring(0, skills.length - 2)%><br>
-
-                  <% if (item.firstkeynote != null){
-                     keynotes = keynotes + item.firstkeynote + ", "
-                     }
-                     if (item.secondkeynote != null){
-                        keynotes = keynotes + item.secondkeynote + ", "
-                     }
-                     if (item.thirdkeynote != null){
-                        keynotes = keynotes + item.thirdkeynote + ", "
-                     }
-                     if (item.fourthkeynote != null){
-                        keynotes = keynotes + item.fourthkeynote + ", "
-                     }
-                     %>
-
-                  KeyNotes: <%= keynotes.substring(0, keynotes.length - 2) %>
-               
-               </p>
-            </div>
          
-            <% }}) %>
+          <div  class = "rightContent">
+            <% var skills = "";
+               var keynotes = "";
+            listResults.forEach(function (item) { 
+               if (item.category != null){ %>
+                  <div class = "rightSplit">
+                     <div class = "rightItemBox">
+                        <h2>
+                           <%= item.category %>: <%= item.title %>
+                        </h2>
+                        <p>
+                        <%- item.maindescription %> 
+                        </p>
+                     </div>
+                     <div class = "contentImageBox">
+                        <img class = "SquareImage" src = './<%=item.ImageSquare%>.png' alt = '<%=item.ImageSquare%>'>
+                     </div>
+                  </div>
+               <% }}) %>
+            </div>
+
+
       </div>
-
-
    </div>
-
     
 <%- include(`../partials/footer`) -%>
